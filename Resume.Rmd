@@ -1,0 +1,29 @@
+---
+title: "Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## Education 
+**Columbia University** New York, United States
+Master of Science in Biostatistics  2021.9 - 2023.5
+
+**University of Michigan** MI, United States
+Bachelor of Science in Pharmaceutical Sciences  2019.9 - 2021.5
+
+**China Pharmaceutical University** Nanjing, China
+Bachelor of Science in Pharmaceutics
+
+## Working experience
+**Sanofi**  
+Shanghai, China Jun.2022 – Aug.2022
+
+* Assist to perform data analysis, database update, follow up the process of project cost and submit an Excel report 
+* Master the company's compliance policy and relevant code of conduct for promotional activities, and have cross-functional communication
+* Support the daily execution of Sanofi marketing
+
+## Publication
+Jiapeng L, Yanling X, et al. "Tissue- and cell-expression of druggable host proteins provide insights into repurposing drugs for COVID-19" Clinical and Translational Science, accepted date: August 23, 2022
+

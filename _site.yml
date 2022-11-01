@@ -3,10 +3,12 @@ output_dir: "."
 navbar:
   title: "Home"
   right:
+    - text: "About"
+      href: Resume.html
     - icon: fa-envelope fa-lg
       href: mailto:<yx2710@cumc.columbia.edu>
     - icon: fa-github fa-lg
-      href: http://github.com/<YOUR_GH_NAME>/
+      href: https://github.com/ylxue1640
 output:
   html_document:
     theme: cerulean

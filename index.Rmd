@@ -12,3 +12,6 @@ output:
 My name is Yanling Xue and now I am a 2nd-year biostatistics student in [Columbia University Irving Medical Center](https://www.cuimc.columbia.edu). I just graduated from [University of Michigan](https://umich.edu) last year and got my bachelor degree in Pharmaceutical Science.
 
 
+## Link to page within the site
+
+[About me](Resume.html)

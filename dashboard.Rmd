@@ -1,5 +1,5 @@
 ---
-title: "Dashboard"
+title: "Dashboard: instacart dataset"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -18,7 +18,7 @@ data("instacart")
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Scatter plot: department number over the week
 
 ```{r}
 instacart_df = 
@@ -38,7 +38,7 @@ plot_ly(
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### bar plot: aisle number
 
 ```{r}
 instacart%>%
@@ -49,7 +49,7 @@ plot_ly(
     x = ~aisle, y = ~n, type = "bar")
 ```
 
-### Chart C
+### box plot: On Tuesday, when people buy items in produce department
 
 ```{r}
 instacart %>% 

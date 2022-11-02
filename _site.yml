@@ -13,4 +13,4 @@ navbar:
       href: https://github.com/ylxue1640
 output:
   html_document:
-    theme: cerulean
+    theme: yeti

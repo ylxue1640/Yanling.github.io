@@ -4,6 +4,7 @@ output:
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
+    theme: yeti
 ---
 
 ```{r setup, include=FALSE}
@@ -57,4 +58,5 @@ instacart %>%
     x = ~aisle, y = ~order_hour_of_day, type = "box", color = ~aisle, alpha = .5
   )
 ```
+
 

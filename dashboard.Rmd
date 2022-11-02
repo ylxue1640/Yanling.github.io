@@ -17,14 +17,14 @@ data("instacart")
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Scatter Plot
+### Chart A
 
 ```{r}
 instacart_df = 
   instacart %>% 
   janitor::clean_names() %>% 
   mutate(day_number = order_dow +1) %>% 
-  mutate(day_of_week  = lubridate::wday(day_number, label = TRUE)) %>% 
+  mutate(day_of_week  = lubridate::wday(day_number, label = FALSE)) %>% 
   select(order_id, product_id, day_of_week, department, aisle, order_number)
 
 instacart_df %>%  
@@ -40,11 +40,21 @@ Column {data-width=350}
 ### Chart B
 
 ```{r}
-
+instacart%>%
+  count(aisle, name = "n") %>%
+  filter(n > 10000) %>% 
+  mutate(aisle = fct_reorder(aisle, n, .desc = TRUE)) %>% 
+plot_ly(
+    x = ~aisle, y = ~n, type = "bar")
 ```
 
 ### Chart C
 
 ```{r}
-
+instacart %>% 
+  filter(department == "produce",order_dow == "2") %>%
+  plot_ly(
+    x = ~aisle, y = ~order_hour_of_day, type = "box", color = ~aisle, alpha = .5
+  )
 ```
+

@@ -9,5 +9,6 @@ output:
 
 ## Welcome to my website
 
-My name is Yanling Xue and now I am a 2nd-year biostatistics student in [Columbia University Irving Medical Center](https://www.cuimc.columbia.edu). I just graduated from [University of Michigan](https://umich.edu) last year and got my bachelor degree in Pharmaceutical Science.
+My name is Yanling Xue. I was born in Jiangsu province and raised in Shanghai. My hobby is reading and I'm so interested in reading detective fiction. 
+Now I am a 2nd-year biostatistics student in [Columbia University Irving Medical Center](https://www.cuimc.columbia.edu). I just graduated from [University of Michigan](https://umich.edu) last year and got my bachelor degree in Pharmaceutical Science.
 

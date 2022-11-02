@@ -8,15 +8,31 @@ output:
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+data("instacart")
 ```
 
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Scatter Plot
 
 ```{r}
+instacart_df = 
+  instacart %>% 
+  janitor::clean_names() %>% 
+  mutate(day_number = order_dow +1) %>% 
+  mutate(day_of_week  = lubridate::wday(day_number, label = TRUE)) %>% 
+  select(order_id, product_id, day_of_week, department, aisle, order_number) %>% 
+  drop_na() 
 
+instacart_df %>%  
+  count(day_of_week, department) %>% 
+plot_ly(
+    x = ~day_of_week, y = ~n, type = "scatter", color = ~department, alpha = 0.5, colors = "viridis")
+  
 ```
 
 Column {data-width=350}

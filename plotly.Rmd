@@ -1,0 +1,54 @@
+---
+title: "plotly"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+data("instacart")
+```
+
+```{r}
+instacart_df = 
+  instacart %>% 
+  janitor::clean_names() %>% 
+  mutate(day_number = order_dow +1) %>% 
+  mutate(day_of_week  = lubridate::wday(day_number, label = TRUE)) %>% 
+  select(order_id, product_id, day_of_week, department, aisle, order_number) %>% 
+  drop_na() 
+```
+
+##Scatter plot of number of items of each department over a week.
+```{r}
+instacart_df %>%  
+  count(day_of_week, department) %>% 
+plot_ly(
+    x = ~day_of_week, y = ~n, type = "scatter", color = ~department, alpha = 0.5, colors = "viridis")
+  
+```
+
+
+## Bar plots of number of items ordered in each aisle, limiting this to aisles with more than 10000 items ordered
+```{r}
+instacart%>%
+  count(aisle, name = "n") %>%
+  filter(n > 10000) %>% 
+  mutate(aisle = fct_reorder(aisle, n, .desc = TRUE)) %>% 
+plot_ly(
+    x = ~aisle, y = ~n, type = "bar", alpha = 0.5)
+```
+
+
+## Boxplot of when people buy each kind of beverages on Tuesday
+```{r}
+instacart %>% 
+  filter(department == "beverages",order_dow == "2") %>%
+  plot_ly(
+    x = ~aisle, y = ~order_hour_of_day, type = "box", color = ~aisle, alpha = .5
+  )
+```
+

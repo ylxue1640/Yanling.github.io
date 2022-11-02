@@ -25,8 +25,7 @@ instacart_df =
   janitor::clean_names() %>% 
   mutate(day_number = order_dow +1) %>% 
   mutate(day_of_week  = lubridate::wday(day_number, label = TRUE)) %>% 
-  select(order_id, product_id, day_of_week, department, aisle, order_number) %>% 
-  drop_na() 
+  select(order_id, product_id, day_of_week, department, aisle, order_number)
 
 instacart_df %>%  
   count(day_of_week, department) %>% 
